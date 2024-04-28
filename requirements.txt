@@ -1,0 +1,4 @@
+schedule~=1.2.0
+environs~=9.5.0
+Pillow~=10.1.0
+Pyrogram~=2.0.106
