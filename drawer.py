@@ -19,8 +19,9 @@ def draw_text(template_path, text, save_path):
 
 
 def generate_avatar():
-    now = datetime.now()
-    text = now.strftime("%A\n%B %d, %Y\n%H:%M")
+    now = datetime.now(tz)
+    # text = now.strftime("%A\n%B %d, %Y\n%H:%M")  # раз в минуту, прошлая версия (это слишком часто, будет error 420)
+    text = now.strftime("%A\n%B %d, %Y\n%I %p")
     print(f'generate_avatar {text = }')
     draw_text(template_path='avatar.jpg', text=text, save_path='avatar_time.jpg')
 

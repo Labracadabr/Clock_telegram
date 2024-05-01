@@ -30,8 +30,8 @@ async def delete_photo():
         date = last_photo.date
         now = datetime.now()
         diff: timedelta = now - date
-        if diff.seconds > 60*60:
-            print(f'Нет нового фото. Самое старое загружено: {date = }')
+        if diff.seconds > 60*60*24:
+            print(f'Нет нового фото. Самое старое загружено {diff.seconds} сек назад: {date = }')
             return False
 
         # удаление авы
@@ -42,3 +42,4 @@ async def delete_photo():
 
 if __name__ == '__main__':
     pass
+    asyncio.run(delete_photo())

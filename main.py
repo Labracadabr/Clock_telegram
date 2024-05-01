@@ -14,11 +14,12 @@ def main():
     print()
 
 
-schedule.every().minute.at(':00').do(main)
+# schedule.every().minute.at(':00').do(main)
+schedule.every().hour.at(':00').do(main)
 
 
 # поллинг каждые n секунд
-n = 2
+n = 10
 while True:
     # проверить, не настало ли время
     schedule.run_pending()
