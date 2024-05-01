@@ -1,6 +1,11 @@
 from PIL import Image, ImageDraw, ImageFont
 import random
 from datetime import datetime
+import pytz
+
+# текст вставки в gmt+3
+tz = pytz.timezone("Etc/GMT-3")
+
 
 def draw_text(template_path, text, save_path):
     template = Image.open(template_path)
